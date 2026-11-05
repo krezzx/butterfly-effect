@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Keep Smiling 🦋</title>
+  <style>
+    :root {
+      --bg: #fffdfb;
+      --text: #282525;
+      --muted: #8e8585;
+    }
+
+    * { box-sizing: border-box; }
+
+    html, body {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+    }
+
+    body {
+      overflow: hidden;
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    .message {
+      position: absolute;
+      inset: 0;
+      z-index: 10;
+      display: grid;
+      place-items: center;
+      padding: 28px;
+      pointer-events: none;
+    }
+
+    .quote {
+      max-width: 620px;
+      text-align: center;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(2rem, 5vw, 4.2rem);
+      line-height: 1.12;
+      font-weight: 400;
+      letter-spacing: -0.035em;
+      animation: appear 1.6s ease both;
+    }
+
+    .quote::after {
+      content: "";
+      display: block;
+      width: 34px;
+      height: 1px;
+      margin: 28px auto 0;
+      background: #d8d0cc;
+    }
+
+    .butterfly {
+      position: absolute;
+      left: -40px;
+      top: var(--top);
+      font-size: var(--size);
+      opacity: var(--opacity);
+      filter: blur(var(--blur));
+      animation: fly var(--duration) linear var(--delay) infinite;
+      will-change: transform;
+      user-select: none;
+    }
+
+    @keyframes fly {
+      0% {
+        transform: translate3d(-10vw, 0, 0) rotate(0deg);
+      }
+      25% {
+        transform: translate3d(28vw, calc(var(--wave) * -1), 0) rotate(8deg);
+      }
+      50% {
+        transform: translate3d(56vw, var(--wave), 0) rotate(-5deg);
+      }
+      75% {
+        transform: translate3d(82vw, calc(var(--wave) * -0.6), 0) rotate(7deg);
+      }
+      100% {
+        transform: translate3d(115vw, 0, 0) rotate(0deg);
+      }
+    }
+
+    @keyframes appear {
+      from { opacity: 0; transform: translateY(12px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .butterfly { animation: none; }
+      .quote { animation: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <main class="message">
+    <div class="quote">
+      For every butterfly that leaves, many more are already finding their way to you.
+      <br />
+      Keep smiling.
+    </div>
+  </main>
+
+  <span class="butterfly" style="--top:8%;--size:13px;--opacity:.38;--blur:0px;--duration:18s;--delay:-4s;--wave:45px;">🦋</span>
+  <span class="butterfly" style="--top:18%;--size:10px;--opacity:.25;--blur:.2px;--duration:23s;--delay:-14s;--wave:-55px;">🦋</span>
+  <span class="butterfly" style="--top:29%;--size:15px;--opacity:.32;--blur:0px;--duration:20s;--delay:-9s;--wave:38px;">🦋</span>
+  <span class="butterfly" style="--top:43%;--size:11px;--opacity:.22;--blur:.3px;--duration:26s;--delay:-18s;--wave:-48px;">🦋</span>
+  <span class="butterfly" style="--top:56%;--size:14px;--opacity:.30;--blur:0px;--duration:21s;--delay:-2s;--wave:52px;">🦋</span>
+  <span class="butterfly" style="--top:69%;--size:9px;--opacity:.24;--blur:.2px;--duration:24s;--delay:-12s;--wave:-42px;">🦋</span>
+  <span class="butterfly" style="--top:81%;--size:16px;--opacity:.28;--blur:0px;--duration:19s;--delay:-7s;--wave:35px;">🦋</span>
+  <span class="butterfly" style="--top:91%;--size:12px;--opacity:.20;--blur:.4px;--duration:27s;--delay:-20s;--wave:-50px;">🦋</span>
+
+</body>
+</html>
